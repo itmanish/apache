@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: kpoc2019
   labels:
-    app: nginx
+    app: apache
 spec:
   type: LoadBalancer
   ports:
