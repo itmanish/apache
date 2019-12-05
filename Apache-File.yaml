@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: kpoc2019
   labels:
-    app: apache
+    app: apache2
 spec:
   type: LoadBalancer
   ports:
@@ -12,26 +12,26 @@ spec:
     nodePort: 31294
     protocol: TCP
   selector:
-    app: apache
+    app: apache2
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kpoc2019
   labels:
-    app: apache
+    app: apache2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: apache
+      app: apache2
   template:
     metadata:
       labels:
-        app: apache
+        app: apache2
     spec:
       containers:
-      - name: apache
-        image: manishit244/apache
+      - name: apache2
+        image: manishit244/apache2
         ports:
         - containerPort: 80
